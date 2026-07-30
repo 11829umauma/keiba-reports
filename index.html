@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja"><head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="referrer" content="no-referrer">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Members</title>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4TNV6WX81W"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-4TNV6WX81W');
+</script>
+<style>
+  body { margin:0; font-family:'Segoe UI','Hiragino Sans',Meiryo,sans-serif;
+         background:#f1f5f9; display:flex; min-height:100vh;
+         align-items:center; justify-content:center; }
+  .card { background:#fff; border-radius:12px; padding:32px 36px;
+          box-shadow:0 4px 16px rgba(15,23,42,.08); width:min(90vw,340px);
+          text-align:center; }
+  h1 { font-size:15px; color:#334155; margin:0 0 18px; font-weight:600; }
+  input { width:100%; box-sizing:border-box; padding:10px 12px; font-size:15px;
+          border:1px solid #cbd5e1; border-radius:8px; margin-bottom:12px; }
+  button { width:100%; padding:10px; font-size:14px; font-weight:600;
+           color:#fff; background:#2563eb; border:none; border-radius:8px;
+           cursor:pointer; }
+  button:disabled { background:#93c5fd; }
+  .err { color:#dc2626; font-size:12px; min-height:16px; margin:8px 0 0; }
+</style></head>
+<body>
+<div class="card">
+  <h1>パスワードを入力してください</h1>
+  <form id="f">
+    <input type="password" id="pw" autocomplete="current-password" autofocus>
+    <button type="submit" id="btn">開く</button>
+  </form>
+  <p class="err" id="err"></p>
+</div>
+<script>
+(function() {
+  var SALT = "ZXu0gWUZwveeFGdHmV8PxQ==", IV = "E3ls//j70oN3IaKZ", CT = "P8Drv726E/uyiAo2mXmJAGQl/eH4pdm+zcc0aZpHOdgXfHxri8RLQxFsqUlExLDKNElxyKMdxsKoHcWmDGSaQglslJV3J6oS9Eb5LYn9lX/xavuvQoMTL4/DrVDl/Yz1Qcs2aDDDjbAlR4ZsV7AaSdBNiktQUBpVVJnlITEr6ycuJrm0cUQdqxhR9FoK/QFOqFGhzmXlQGQJhl39m1C0O5g00Kr2mKNWFD3NTA5uA95p111I714hueB/Sw/GOOuyktkCJNL7IUEC9VbYqwOuxs1G1n76JCdbFjwQCCFDBbCJox0B75ScWsDf0t22TZ2oReKurNK2ywRIHgDlpQGl0QBDS5ZBinPG1yup7E1dhK6lr3auuakBJRffjOu4LTI8tDRQyupFvWYt6JTZNVa9nOmBdsqBCxbpSb/j1jzsaYbxMcX2F1rIc2LEkbzLMxlgjqQUHXlkRol5/q9eOxq/l+VKIrIQS4c1obbmHsREQ54iEE7w4i4Re5IWrUnBq0TkszL/tYbo8Lz3xVxR6RUlnMfvEBakz8qWZQNwKsHeq9ineT8mQ4oh89SR5vePGa1bq5980Zt6whAgFyPAIGbwxjr8VMWspO3MVasQmyzWoVO31Zw8p7/KqZ0MSDOvbMV34HpV9yqcHLwdD0DVrNhdXd2rLmdKwqY7tJPg02XbpepLRhwW4a9l3gCFU/UyAHzcIsGITxgsZmBSVu67p5FFx9GtYw9zGYPk6w/pf/A6BOQa67jG/4A/ZChP4iKw19tJ67LM+T1nOpHGA1R2wNvVXPp51pD7LIB/4sEThAFgT9zRIliqtDrd8PRJAfRW0j/fmFLtQwyLRf1TJrQzn86G4gH5nd4MyXHfWVyjPLN5Paz/UKMZlJNOgzfq/bw5pvrJRfdNqDbW027XoVypRR1QjkKFX6V1iyX/42l1mmCxrKxMkh8w0EIII1lLQsuiqOvhhcN9AECxDObLxGpZrotdfpI9QkPd7uq8G5WMlFbuPz2gep8DloKhWj8MFt7czXTNCiRkszfevTtvQVJd6Yvv+n3y9TzixB9OrqbqjR8palTqzHSSNCNjoi3DKvhATq7xnNzxFDuFfdrQAVyCFLPuGz/neTPOV+ba3WH2YrwvedcVHl/3waiiSLNkhRcmXG3WSHogEViw7B8PIF6Eq7ni1R25W0BuB3fhjNxPniIIWjJ+edD5haGDe7C+0qrfbi6CE0Ra6GEKAayFIjXcPkOYSI0kIlHxarSnh3OSEXncruIE6wYnpVge/9Pnmrx8eaNX1cuXafNNBdoGKb/zw3kQcTror78LElTrK7+3QWBQvw1E/Iz4oPn+D2Lq3QSpvJ7mwRniZmhP5xkSfa6HbkkIeisurChwkXEjn9cEdyNlYYqPyrs8K8qHxzUT/2rO1SyBz1CbvzjEDFCArqplAF7CtSXclap9CBCG7iRCse5uKz31LGPWC8toZDoNRdMuTjvOhtpFiMMdoplc++Zx6FVKh5hAhHJ6XdJ8QB8x4p28enyWTQ1EObzJSTbpca8BPkAOA5PDz4eRBQt9+np6I2sMHxDQA71NNc3Yp/qUkLkswxo6BAdOM+8K/w18Z9LaK6pg8Pa6+39Cd/klY8E4KHLKDVId5RDcJFfUT3mZ4qyRTQNDqUgqcOK9sAKJNy2bezZZ9V9mYP4B/N2HuJgeDY6fgCTiVOfkUh9XZP7VT/kDEcxwrGpCYNljg324uJUz/JI7twk/ExAJtfMMZPVAet7ylVO5pGJzUzaCGrQCp7lTqQ==", ITERS = 300000;
+  var SS = "keiba_site_key";
+  function b64(s) {
+    var bin = atob(s), a = new Uint8Array(bin.length);
+    for (var i = 0; i < bin.length; i++) a[i] = bin.charCodeAt(i);
+    return a;
+  }
+  function hex(a) {
+    return Array.from(new Uint8Array(a)).map(function(x) {
+      return x.toString(16).padStart(2, "0"); }).join("");
+  }
+  function unhex(s) {
+    var a = new Uint8Array(s.length / 2);
+    for (var i = 0; i < a.length; i++) a[i] = parseInt(s.substr(i * 2, 2), 16);
+    return a;
+  }
+  async function deriveBits(pw) {
+    var km = await crypto.subtle.importKey("raw",
+      new TextEncoder().encode(pw), "PBKDF2", false, ["deriveBits"]);
+    return crypto.subtle.deriveBits(
+      {name: "PBKDF2", salt: b64(SALT), iterations: ITERS, hash: "SHA-256"},
+      km, 256);
+  }
+  async function tryKey(raw) {
+    var key = await crypto.subtle.importKey("raw", raw,
+      {name: "AES-GCM"}, false, ["decrypt"]);
+    var pt = await crypto.subtle.decrypt(
+      {name: "AES-GCM", iv: b64(IV)}, key, b64(CT));
+    return new TextDecoder().decode(pt);
+  }
+  function show(html, raw) {
+    try { localStorage.setItem(SS, hex(raw)); } catch (e) {}
+    // パース中のdocument.writeは追記になるため、パース完了を待ってから全置換する
+    function doShow() {
+      document.open();
+      document.write(html);
+      document.close();
+    }
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", doShow);
+    } else {
+      doShow();
+    }
+  }
+  var saved = null;
+  try { saved = localStorage.getItem(SS); } catch (e) {}
+  if (saved) {
+    var raw = unhex(saved).buffer;
+    tryKey(raw).then(function(html) { show(html, raw); })
+      .catch(function() { try { localStorage.removeItem(SS); } catch (e) {} });
+  }
+  document.getElementById("f").addEventListener("submit", function(ev) {
+    ev.preventDefault();
+    var btn = document.getElementById("btn");
+    var err = document.getElementById("err");
+    btn.disabled = true; err.textContent = "";
+    deriveBits(document.getElementById("pw").value).then(function(raw) {
+      return tryKey(raw).then(function(html) { show(html, raw); });
+    }).catch(function() {
+      err.textContent = "パスワードが違います";
+      btn.disabled = false;
+    });
+  });
+})();
+</script>
+</body></html>
