@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja"><head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta name="referrer" content="no-referrer">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Members</title>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4TNV6WX81W"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-4TNV6WX81W');
+</script>
+<style>
+  body { margin:0; font-family:'Segoe UI','Hiragino Sans',Meiryo,sans-serif;
+         background:#f1f5f9; display:flex; min-height:100vh;
+         align-items:center; justify-content:center; }
+  .card { background:#fff; border-radius:12px; padding:32px 36px;
+          box-shadow:0 4px 16px rgba(15,23,42,.08); width:min(90vw,340px);
+          text-align:center; }
+  h1 { font-size:15px; color:#334155; margin:0 0 18px; font-weight:600; }
+  input { width:100%; box-sizing:border-box; padding:10px 12px; font-size:15px;
+          border:1px solid #cbd5e1; border-radius:8px; margin-bottom:12px; }
+  button { width:100%; padding:10px; font-size:14px; font-weight:600;
+           color:#fff; background:#2563eb; border:none; border-radius:8px;
+           cursor:pointer; }
+  button:disabled { background:#93c5fd; }
+  .err { color:#dc2626; font-size:12px; min-height:16px; margin:8px 0 0; }
+</style></head>
+<body>
+<div class="card">
+  <h1>パスワードを入力してください</h1>
+  <form id="f">
+    <input type="password" id="pw" autocomplete="current-password" autofocus>
+    <button type="submit" id="btn">開く</button>
+  </form>
+  <p class="err" id="err"></p>
+</div>
+<script>
+(function() {
+  var SALT = "ZXu0gWUZwveeFGdHmV8PxQ==", IV = "SfEZOBl40zMy7MP7", CT = "hltHbObBwgE7vSJwmeXegA3B/xd/KRIb+W73bcrd5eRWfPkgpxG8PiZlO2PugCSWKKBiJVpR0JnOzYzebxj18Ykan4vVj2JJd9MfvCDQuBy4dMa7sxq8V9+sPPfZByxtyNTpvoA5n+g6gd0p9U8T08elhgMfd3qN3iuyjUlWQ1Ss+skWP7kWfLtIDYMRzziEDZyY2raubvXfa3YRHvEkyU8dLqquTrEpVVexEysydL0P9Nvt3G6qPK/wGKYsLQuW9fHHsniySUGDAJi1ozntvqer9iY9iAo8IJ9OWqOaiOnYszeAX6m61WjOWzgdY35LvhdEL/XfoGZbYdjq4uhIq9ht8HWmFGZLz5GuUkVBf1vHz5T4I4VR+NdjOikIACaj6pt3B5axU2V05JSzpNAH8hH5EjztL+bk0Peg5cFm2pD6Qaklbqa3HxGPaL07IIvfeoU+XNOhtB0aU7CWPJsaC5WJxx7UjCZoElCTOuGPvpJJWOdgmNvabsJXSZmYz9/eFD9MU8sPKFO08VP2DUgdPlq0shsbpOr27TqXxoflrVWfXz6y/vXkITzOOn3HkQHEyXL43wjpXFppwn1Pb82W7znjZeNqLcuInE0sEWvF5O0RDy2ExdI4uyimZpGx/9US+aWXAXvDeXkNpdsnRn0abp8AZn1xhhsx2/epOfUMpIP6yO43D8GeSTMMphryYgDyX4SH+aJdKTZYT4aJ9GcX5zPyyfeEozXPJZxayxtLy5ErOfO/I/qBCLkiOaqzLcMZaSFRJ1aZzYKp0EWk/40d/WkrjRoVcx8GBo6G+lLZ9sl54xVMfgLdtLQ1SAMkp1P2RHph9yDwYLvr1FkWHiZgRf0Zu9RVN4fERiu1n00vI4p9O+hZZS8hORYyZAnuJaMXmL5IyPGMFnEgTHXoxF4NnY8cgXM/VgdswjiD0btsBqFlViOsgVnvdRBX1xzwKUXFcC6cuTSCz1e8TE7s4WA8Jj3mGkFBqX6hSH78n6jkFpaFfxE0mXH0zwfG8N04CAa5pW3t7chmp4BDVE0G5ipF+kVJkeYQv/0GrurLzsH2qJILukkwLlBOfBvURShJ/PRxoE8+s5GT3TC8ZYIWguzkdJiqBQ9vGSfhKiEebNE9nVImmvTizZPmosRSyjnbXuOMJO+x2lEgy82QC+77flAWNOX5ax0tB7SMyvdfPNno0YOJASmdlU7pKBYpKWEwdikpMT5eIr+8Glf/ZB5IWc6dbkgKyL2CR8d2xyrGIDXvQMG7gLLZMK3kaHSI6z7IMsDFt2YGQWG5Fn8RETeHQdrSsz3HEOPxYHOAD3hEBhFOLibuFzfubjhn9SB04tcM51ByFVufjHb1YJ3O3HAHuNMVX9LFF89bj+rO8KEzSOyLKGuZlbyOS6F5ZekyEd/pov+C0Hi5", ITERS = 300000;
+  var SS = "keiba_site_key";
+  function b64(s) {
+    var bin = atob(s), a = new Uint8Array(bin.length);
+    for (var i = 0; i < bin.length; i++) a[i] = bin.charCodeAt(i);
+    return a;
+  }
+  function hex(a) {
+    return Array.from(new Uint8Array(a)).map(function(x) {
+      return x.toString(16).padStart(2, "0"); }).join("");
+  }
+  function unhex(s) {
+    var a = new Uint8Array(s.length / 2);
+    for (var i = 0; i < a.length; i++) a[i] = parseInt(s.substr(i * 2, 2), 16);
+    return a;
+  }
+  async function deriveBits(pw) {
+    var km = await crypto.subtle.importKey("raw",
+      new TextEncoder().encode(pw), "PBKDF2", false, ["deriveBits"]);
+    return crypto.subtle.deriveBits(
+      {name: "PBKDF2", salt: b64(SALT), iterations: ITERS, hash: "SHA-256"},
+      km, 256);
+  }
+  async function tryKey(raw) {
+    var key = await crypto.subtle.importKey("raw", raw,
+      {name: "AES-GCM"}, false, ["decrypt"]);
+    var pt = await crypto.subtle.decrypt(
+      {name: "AES-GCM", iv: b64(IV)}, key, b64(CT));
+    return new TextDecoder().decode(pt);
+  }
+  function show(html, raw) {
+    try { localStorage.setItem(SS, hex(raw)); } catch (e) {}
+    // パース中のdocument.writeは追記になるため、パース完了を待ってから全置換する
+    function doShow() {
+      document.open();
+      document.write(html);
+      document.close();
+    }
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", doShow);
+    } else {
+      doShow();
+    }
+  }
+  var saved = null;
+  try { saved = localStorage.getItem(SS); } catch (e) {}
+  if (saved) {
+    var raw = unhex(saved).buffer;
+    tryKey(raw).then(function(html) { show(html, raw); })
+      .catch(function() { try { localStorage.removeItem(SS); } catch (e) {} });
+  }
+  document.getElementById("f").addEventListener("submit", function(ev) {
+    ev.preventDefault();
+    var btn = document.getElementById("btn");
+    var err = document.getElementById("err");
+    btn.disabled = true; err.textContent = "";
+    deriveBits(document.getElementById("pw").value).then(function(raw) {
+      return tryKey(raw).then(function(html) { show(html, raw); });
+    }).catch(function() {
+      err.textContent = "パスワードが違います";
+      btn.disabled = false;
+    });
+  });
+})();
+</script>
+</body></html>
